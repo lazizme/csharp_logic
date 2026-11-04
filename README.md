@@ -1,42 +1,47 @@
-# Higher Luck – Project 1
+# Higher Luck - Project 1
 
-OOP course project, Fall 2026 (Vistula University)
-Team: **[Your Group Name]**
-Members: [Name Surname], [Name Surname], [Name Surname]
+OOP course, Vistula University, 2026
 
-## What is it?
+Members:
+- Lazizbek Sultonov (79244)
+- Oualid Kesraoui (78482)
+- Damian Barczewski (78985)
 
-A simple two-player dice game made in C# with Windows Forms. Each round both
-players roll a die and whoever gets the higher number gets a point. If both roll
-the same number, they both get a point. After the last round the winner is shown
-and the result is saved to a txt file.
+## About the game
+
+This is a dice game for 2 players written in C# (Windows Forms). Every round
+each player rolls the dice. The player with the bigger number gets 1 point.
+If the numbers are the same both players get 1 point. When all rounds are
+finished the program shows who won and saves the result into a txt file.
 
 ## How to play
 
-1. Pick the number of rounds (5 to 30).
-2. Type in both player names. The setup buttons unlock once the names are filled in.
-3. Choose an avatar and click **Set Up First Player**, then pick a different avatar
-   and click **Set Up Second Player**. You can't pick the same avatar twice.
-4. Click **START**.
-5. Players take turns clicking **ROLL**. The black label shows whose turn it is.
-6. When all rounds are done, a message box shows the winner and the game resets.
+1. Choose how many rounds you want (from 5 to 30).
+2. Write the names of player 1 and player 2. Buttons for setup are disabled
+   until both names are written.
+3. Select an avatar and press "Set Up First Player". Then select another avatar
+   and press "Set Up Second Player". Two players cannot have the same avatar.
+4. Press "START".
+5. Press "ROLL" one by one. The black label says which player should roll now.
+6. After the last round a message box shows the winner and the game goes back
+   to the start.
 
-Other buttons:
-- **SHOW RESULT** loads all past games from the txt file into the Report list.
-- **RESET ALL** clears everything and starts over, at any time.
+There are also 2 more buttons:
+- "SHOW RESULT" - reads the txt file and shows all old games in the Report list.
+- "RESET ALL" - clears everything, you can press it any time.
 
-## How it works (short version)
+## How it is made
 
-- `Player` class keeps each player's name, avatar and points.
-- Results are saved to `results.txt` (no database, just file operations).
-  Each line looks like: `NAME1;points;NAME2;points;The winner is NAME`
-- Avatar and dice images are stored in the project's Resources, so they work on
-  any computer without changing file paths.
-- File reading/writing is wrapped in try-catch so the app doesn't crash if
-  something goes wrong with the file.
+- There is a Player class which stores name, avatar and points of a player.
+- Results are saved in results.txt. We don't use a database, only file
+  read/write. One line in the file looks like this:
+  NAME1;points;NAME2;points;The winner is NAME
+- Pictures of avatars and dice are in the Resources of the project, so we
+  don't need to change paths on another computer.
+- Reading and writing the file is inside try-catch, so if there is some
+  problem with the file the program will not crash.
 
 ## How to run
 
-1. Open the `.sln` file in Visual Studio.
-2. Build and run (F5).
-3. That's it. `results.txt` is created automatically after the first game.
+Open the .sln file in Visual Studio and press F5. The file results.txt will be
+created by itself after the first game.
